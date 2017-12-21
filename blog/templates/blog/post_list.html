@@ -4,18 +4,19 @@
         <title>VINAYAKA SECURITY SERVICES</title>
     </head>
     <body>
+	     {% for post in posts %}
         <div>
-            <h1><a href="/">HOME</a></h1>
+            <h1><a href="/">{{ post.title }}</a></h1>
         </div>
 
         <div>
-            <p>published: 21.12.2017, 11:33</p>
+            <p>published: {{ post.published_date }}</p>
             <h2><a href="">ABOUT US</a></h2>
-            <p>Vinayaka Security Services was formed & headed by Mr.S GOPAL (Retired H/Captain) with 28 years of colorful, dedicated and unblemished service in Indian Army.  He was  felicitated with Honorary Commission (Captain) by the President of India in recognition to his meritorious services in various Operations.  The company is undertaking the following assignments state wide.</p>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
 
         <div>
-            <p>published: 21.12.2017, 11:33</p>
+            <p>published: {{ post.published_date }}</p>
             <h2><a href="">CLIENTS</a></h2>
             <p>(a)	  Transstroy Toll Ways - Tirupati to Chennai High Ways<br>
                (b)	  Hotel Marasa Sarovar, Tirupati<br>
@@ -28,5 +29,6 @@
                (i)	   ISKCON (IFRF & GOSHALA), Tirupati & Chinnagottigallu
             </p>
         </div>
+		{% endfor %}
     </body>
 </html>
